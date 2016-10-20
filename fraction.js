@@ -766,14 +766,18 @@
     }
   };
 
+  var FractionWrapper = {
+    Fraction: Fraction
+  };
+
   if (typeof define === "function" && define["amd"]) {
     define([], function() {
-      return Fraction;
+      return FractionWrapper;
     });
   } else if (typeof exports === "object") {
-    module["exports"] = Fraction;
+    module["exports"] = FractionWrapper;
   } else {
-    root['Fraction'] = Fraction;
+    root['Fraction'] = FractionWrapper;
   }
 
 })(this);

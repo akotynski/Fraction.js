@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-var Fraction = require('../fraction');
+var Fraction = require('../fraction').Fraction;
 
 var tests = [{
     set: "foo",
@@ -1173,7 +1173,7 @@ describe('Fraction', function() {
 
       if (tests[i].fn) {
 
-        it(tests[i].label || tests[i].set, function() {
+        it("Test " + (tests[i].label || tests[i].set), function() {
           try {
             assert.equal(new Fraction(tests[i].set)[tests[i].fn](tests[i].param).toString(), tests[i].expect);
           } catch (e) {
@@ -1183,7 +1183,7 @@ describe('Fraction', function() {
 
       } else {
 
-        it(tests[i].label || tests[i].set, function() {
+        it("Test " + (tests[i].label || tests[i].set), function() {
           try {
             assert.equal(new Fraction(tests[i].set).toString(), tests[i].expect);
           } catch (e) {
