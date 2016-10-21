@@ -1230,6 +1230,18 @@ describe('Arguments', function() {
     var fraction = new Fraction([1, 4]);
     assert.equal("1/4", fraction.n + "/" + fraction.d);
   });
+
+  it("Should be possible to add Fraction to Fraction", function() {
+    // given
+    var firstFraction = new Fraction(1);
+    var secondFraction = new Fraction(2);
+
+    // when
+    var result = firstFraction.add(secondFraction);
+
+    // then
+    assert.equal(new Fraction(3).toFraction(), result.toFraction());
+  });
 });
 
 describe('fractions', function() {

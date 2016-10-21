@@ -39,9 +39,17 @@ export declare class Fraction {
     /**
      * Adds two rational numbers
      *
+     */
+    add(fraction: Fraction): Fraction;
+
+    /**
+     * Adds two rational numbers
+     *
      * Ex: new Fraction({n: 2, d: 3}).add("14.9") => 467 / 30
      */
     add(nominator: number, denominator?: number): Fraction;
+
+    sub(fraction: Fraction): Fraction;
 
     /**
      * Subtracts two rational numbers
@@ -56,6 +64,7 @@ export declare class Fraction {
      * Ex: new Fraction("-17.(345)").mul(3) => 5776 / 111
      */
     mul(nominator: number, denominator?: number): Fraction;
+    mul(fraction: Fraction): Fraction;
 
     /**
      * Divides two rational numbers
@@ -63,6 +72,7 @@ export declare class Fraction {
      * Ex: new Fraction("-17.(345)").inverse().div(3)
      */
     div(nominator: number, denominator?: number): Fraction;
+    div(fraction: Fraction): Fraction;
 
     /**
      * Clones the actual object
@@ -77,6 +87,7 @@ export declare class Fraction {
      * Ex: new Fraction('4.(3)').mod([7, 8]) => (13/3) % (7/8) = (5/6)
      */
     mod(nominator: number, denominator?: number): Fraction;
+    mod(fraction: Fraction): Fraction;
 
     /**
      * Calculates the fractional gcd of two rational numbers
@@ -84,6 +95,7 @@ export declare class Fraction {
      * Ex: new Fraction(5,8).gcd(3,7) => 1/56
      */
     gcb(nominator: number, denominator?: number): Fraction;
+    gcb(fraction: Fraction): Fraction;
 
     /**
      * Calculates the fractional lcm of two rational numbers
@@ -91,6 +103,7 @@ export declare class Fraction {
      * Ex: new Fraction(5,8).lcm(3,7) => 15
      */
     lcm(nominator: number, denominator?: number): Fraction;
+    lcm(fraction: Fraction): Fraction;
 
     /**
      * Calculates the ceil of a rational number
@@ -134,8 +147,10 @@ export declare class Fraction {
      * Ex: new Fraction(19.6).equals([98, 5]);
      **/
     equals(nominator: number, denominator?: number): boolean;
+    equals(fraction: Fraction): boolean;
 
     compare(nominator: number, denominator?: number): number;
+    compare(fraction: Fraction): number;
 
     /**
      * Check if two rational numbers are divisible
@@ -143,6 +158,7 @@ export declare class Fraction {
      * Ex: new Fraction(19.6).divisible(1.5);
      */
     divisible(nominator: number, denominator?: number): boolean;
+    divisible(fraction: Fraction): boolean;
 
     /**
      * Returns a decimal representation of the fraction
